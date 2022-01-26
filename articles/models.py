@@ -56,6 +56,7 @@ class Article(models.Model):
     title = models.CharField(default="", max_length=50)
     content = models.TextField(default="")
     published = models.DateTimeField(auto_now=True, auto_now_add=False)
+    date = models.DateField(auto_now=True, auto_now_add=False)
     featured = models.BooleanField(default=False)
 
     class Meta:

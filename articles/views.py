@@ -4,8 +4,10 @@ from . forms import ArticleForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 from .filters import ArticleFilter
+
 from django.views.generic import CreateView, UpdateView, DeleteView, ListView, DetailView
 # Create your views here.
+
 
 
 class CategoryListView(ListView):
