@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+
+<!--############-->
+{% block content %}
+<div class="card-body px-5 py-5" style="margin-top: 100px;">
+    <h3 class="card-title text-left mb-3">Register</h3>
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            <!--############-->
+            {% for field in register_form %}
+            <div class="form-floating mb-3">
+                <div class="fw-bolder">{{field.label}}</div>
+                {{ field }}
+            </div>
+            {% endfor %}
+            <!--############-->
+        </div>
+        <div class="form-group d-flex align-items-center justify-content-between">
+            <div class="form-check">
+                <label class="form-check-label">
+            </div>
+            
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-block enter-btn">Submit</button>
+        </div>
+        
+        <p class="sign-up text-center">Already have an Account?<a href="{% url 'accounts:login' %}"> Sign Up</a></p>
+        <p class="terms">By creating an account you are accepting our<a href="#"> Terms & Conditions</a></p>
+    </form>
+</div>
+{% endblock content %}

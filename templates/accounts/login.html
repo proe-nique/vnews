@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<div class="container px-5 py-5" style="margin-top: 100px;">
+    <h3 class="text-left mb-3">Login</h3>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <!--############-->
+            {% for field in login_form %}
+            <div class="form-floating mb-3">
+                <div class="fw-bolder">{{field.label}}</div>
+                {{ field }}
+            </div>
+            {% endfor %}
+            <!--############-->
+        </div>
+        <div class="form-group text-start">
+            <div class="form-check">
+                <label class="form-check-label">
+                <input type="checkbox" class="form-check-input"> Remember me </label>
+            </div>
+
+        </div>
+        <div class="text-start">
+            <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
+        </div>
+        <p class="text-start">Don't have an Account?<a href="{% url 'accounts:register' %}"> Sign Up</a></p>
+    </form>
+</div>
+{% endblock content %}

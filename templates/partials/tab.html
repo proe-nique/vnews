@@ -1,0 +1,25 @@
+<ul class="nav sticky-top bg-warning">
+
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#">Top News</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Latest</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+
+
+    <ul class="nav-item">
+        {% if page_title == 'blog' and request.user.is_authenticated and profile == request.user.profile %}
+
+        <li class="nav-item">
+            <a class="nav-link" href="#">Add Post</a>
+        </li>
+        {% endif %}
+
+    </ul>
+
+
+</ul>
